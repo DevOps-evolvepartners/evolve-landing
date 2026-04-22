@@ -139,7 +139,7 @@
                         <!-- CTA -->
                         <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
                             <a href="https://app.evolvefichaje.com" class="bg-[#c7a76c] text-[#1a1a1a] hover:bg-[#b99863] font-bold rounded-full px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg w-full sm:w-auto">Empezar gratis</a>
-                            <a href="mailto:demo@evolvefichaje.com" class="bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-8 py-4 transition-all duration-300 text-lg w-full sm:w-auto">Solicitar Demo</a>
+                            <a href="#" data-email="demo" class="bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-8 py-4 transition-all duration-300 text-lg w-full sm:w-auto">Solicitar Demo</a>
                         </div>
                         
                         <!-- Trust Signals -->
@@ -488,7 +488,7 @@
                         <div class="text-[2.2rem] font-bold text-brand-primary leading-none mb-4">A medida</div>
                         <p class="text-brand-muted mb-8 text-sm h-10 font-light">Soluciones personalizadas para grandes empresas.</p>
                         
-                        <a href="mailto:demo@evolvefichaje.com" class="block w-full text-center bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-6 py-3 transition-all duration-300 mb-8">Contactar ventas</a>
+                        <a href="#" data-email="demo" class="block w-full text-center bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-6 py-3 transition-all duration-300 mb-8">Contactar ventas</a>
                         
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
@@ -668,7 +668,7 @@
                 <p class="text-white/70 text-lg mb-10">14 días de prueba gratuita con acceso completo. Sin tarjeta de crédito. Sin permanencia.</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                     <a href="https://app.evolvefichaje.com" class="inline-flex justify-center items-center bg-[#c7a76c] hover:bg-[#b99863] text-[#1a1a1a] font-bold rounded-full px-[36px] py-[16px] text-[16px] shadow-[0_4px_20px_rgba(199,167,108,0.35)] hover:shadow-[0_8px_25px_rgba(199,167,108,0.45)] hover:-translate-y-[2px] transition-all duration-300 w-full sm:w-auto">Prueba 14 días gratis</a>
-                    <a href="mailto:demo@evolvefichaje.com" class="inline-flex justify-center items-center bg-transparent text-white/60 border border-white/20 font-normal rounded-full px-[36px] py-[16px] text-[16px] hover:text-white/90 hover:border-white/40 transition-all duration-300 w-full sm:w-auto">Solicitar Demo Personalizada</a>
+                    <a href="#" data-email="demo" class="inline-flex justify-center items-center bg-transparent text-white/60 border border-white/20 font-normal rounded-full px-[36px] py-[16px] text-[16px] hover:text-white/90 hover:border-white/40 transition-all duration-300 w-full sm:w-auto">Solicitar Demo Personalizada</a>
                 </div>
             </div>
         </section>
@@ -698,7 +698,7 @@
                     <h4 class="text-white font-semibold text-[14px] mb-4">Compañía</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Sobre Evolve</a></li>
-                        <li><a href="mailto:hola@evolvefichaje.com" class="text-white/50 text-[14px] hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#" data-email="hola" class="text-white/50 text-[14px] hover:text-white transition-colors">Contacto</a></li>
                         <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Blog</a></li>
                         <li><a href="#ayuda" class="text-white/50 text-[14px] hover:text-white transition-colors">Ayuda</a></li>
                     </ul>
@@ -780,6 +780,14 @@
                     // Toggle current
                     content.classList.toggle('hidden');
                     icon.classList.toggle('rotate-180');
+                });
+            // Email Obfuscation Logic
+            document.querySelectorAll('[data-email]').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const u = el.getAttribute('data-email');
+                    const d = ["evolvefichaje", "com"].join(".");
+                    window.location.href = ["mailto:", u, "@", d].join("");
                 });
             });
         });
