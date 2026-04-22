@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolve Fichaje | Registro de jornada laboral simple y legal</title>
+    <meta name="description" content="Evolve Fichaje es el software SaaS de registro de jornada laboral ideal para el mercado español. Cumple con la normativa legal de manera sencilla.">
+    <meta name="keywords" content="fichaje, registro jornada laboral, control horario, saas, españa, recursos humanos">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Evolve Fichaje | Registro de jornada laboral">
+    <meta property="og:description" content="Cumple la normativa legal con el software SaaS de registro de jornada laboral más fácil de usar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evolvefichaje.com">
+    <meta property="og:image" content="https://evolvefichaje.com/assets/og-image.jpg">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#1a1a1a',
+                            gold: '#d2c8a3',
+                            'gold-hover': '#c2b68c',
+                            'gold-2': '#e0d8bd',
+                            muted: '#808080',
+                            border: '#e5e5e5',
+                            bg: '#fafafa',
+                            surface: '#ffffff',
+                            accent: '#faf8cc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        display: ['"Inter"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 24px rgba(0,0,0,0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/shared.css">
+    <link rel="stylesheet" href="./css/landing.css">
+</head>
+<body class="bg-brand-bg relative">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full bg-white border-b border-brand-border shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center group">
+                        <img src="./assets/logo-fichaje.svg" alt="Evolve Fichaje Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#caracteristicas" class="text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium">Características</a>
+                    <a href="#precios" class="text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium">Precios</a>
+                    <a href="#cumplimiento" class="text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium">Cumplimiento Legal</a>
+                    <a href="#ayuda" class="text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium">Ayuda</a>
+                </nav>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://app.evolvefichaje.com" class="text-brand-muted hover:text-brand-primary font-medium transition-colors duration-200">Iniciar Sesión</a>
+                    <a href="https://app.evolvefichaje.com" class="btn-primary">Empezar Gratis</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-muted hover:text-brand-primary focus:outline-none p-2 rounded-md transition-colors" aria-label="Abrir menú">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-brand-border absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#caracteristicas" class="block px-3 py-3 text-brand-muted hover:text-brand-primary hover:bg-gray-50 rounded-md font-medium transition-colors">Características</a>
+                <a href="#precios" class="block px-3 py-3 text-brand-muted hover:text-brand-primary hover:bg-gray-50 rounded-md font-medium transition-colors">Precios</a>
+                <a href="#cumplimiento" class="block px-3 py-3 text-brand-muted hover:text-brand-primary hover:bg-gray-50 rounded-md font-medium transition-colors">Cumplimiento Legal</a>
+                <a href="#ayuda" class="block px-3 py-3 text-brand-muted hover:text-brand-primary hover:bg-gray-50 rounded-md font-medium transition-colors">Ayuda</a>
+                
+                <div class="pt-4 flex flex-col gap-3">
+                    <a href="https://app.evolvefichaje.com" class="btn-secondary w-full border border-transparent">Iniciar Sesión</a>
+                    <a href="https://app.evolvefichaje.com" class="btn-primary w-full">Empezar Gratis</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-white py-20 md:py-28 relative overflow-hidden border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left Content -->
+                    <div class="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+                        <!-- Pill / Tag -->
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-border bg-brand-bg text-brand-primary text-sm font-medium mb-8 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                            <span class="text-brand-gold text-base leading-none">✦</span> 
+                            <span>100% Cumplimiento Ley Art. 34.9</span>
+                        </div>
+                        
+                        <!-- Huge Typography -->
+                        <h1 class="text-[3rem] md:text-6xl lg:text-[4.5rem] font-bold tracking-tighter text-brand-primary leading-[1.05] mb-8">
+                            Control horario.<br/>Cero complicaciones.
+                        </h1>
+                        
+                        <!-- Subtitle -->
+                        <p class="text-brand-muted text-lg md:text-xl leading-relaxed mb-10 font-light max-w-xl mx-auto lg:mx-0">
+                            Una plataforma minimalista y segura para cumplir con la normativa española sin fricciones. Desde cualquier lugar.
+                        </p>
+                        
+                        <!-- CTA -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
+                            <a href="https://app.evolvefichaje.com" class="bg-brand-primary text-white hover:bg-black font-semibold rounded-full px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg w-full sm:w-auto">Empezar gratis</a>
+                            <a href="mailto:demo@evolvefichaje.com" class="bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-8 py-4 transition-all duration-300 text-lg w-full sm:w-auto">Solicitar Demo</a>
+                        </div>
+                        
+                        <!-- Trust Signals -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-brand-muted font-medium mt-4">
+                            <div class="flex items-center gap-1.5"><span class="text-brand-gold">✓</span> Sin tarjeta de crédito</div>
+                            <span class="hidden sm:inline text-brand-border/50">•</span>
+                            <div class="flex items-center gap-1.5"><span class="text-brand-gold">✓</span> Cancela cuando quieras</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Mockup -->
+                    <div class="relative w-full max-w-[340px] lg:max-w-[380px] mx-auto lg:mr-0 lg:ml-auto z-10 perspective-1000 mt-8 lg:mt-0">
+                        <!-- Decorative glow behind phone -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-brand-gold/15 blur-[60px] rounded-full z-0 pointer-events-none"></div>
+
+                        <!-- Phone Frame -->
+                        <div class="relative bg-white border-[14px] border-brand-primary rounded-[50px] h-[680px] w-full shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col transform lg:rotate-y-[-5deg] lg:rotate-x-[5deg] hover:rotate-0 transition-transform duration-700 z-10">
+                            <!-- Notch -->
+                            <div class="absolute top-0 inset-x-0 h-7 bg-brand-primary rounded-b-3xl w-36 mx-auto z-20"></div>
+                            
+                            <!-- App Content -->
+                            <div class="flex-1 bg-brand-bg flex flex-col pt-16 relative z-10">
+                                <!-- Header -->
+                                <div class="px-6 pb-6 text-center border-b border-brand-border bg-white">
+                                    <div class="w-14 h-14 mx-auto bg-brand-primary rounded-full flex items-center justify-center mb-4 shadow-sm">
+                                        <span class="text-white font-bold text-2xl">E</span>
+                                    </div>
+                                    <h3 class="font-bold text-xl text-brand-primary">¡Hola, Laura!</h3>
+                                    <p class="text-sm text-brand-muted">Miércoles, 24 Octubre</p>
+                                </div>
+                                
+                                <!-- Time -->
+                                <div class="flex-1 flex flex-col items-center justify-center">
+                                    <div class="text-[4rem] font-bold text-brand-primary tracking-tighter leading-none mb-2">08:58</div>
+                                    <div class="text-brand-gold font-medium text-lg">Turno de mañana</div>
+                                </div>
+                                
+                                <!-- Action -->
+                                <div class="p-8 pb-12 mt-auto relative">
+                                    <!-- Button -->
+                                    <div class="anim-button w-full h-16 rounded-[20px] flex items-center justify-center text-white font-bold text-xl shadow-lg relative overflow-hidden cursor-pointer z-10">
+                                        <span class="absolute anim-text-in">Fichar Entrada</span>
+                                        <span class="absolute anim-text-out opacity-0 flex items-center gap-2">
+                                            <span class="w-3 h-3 bg-white rounded-full animate-pulse"></span>
+                                            Trabajando
+                                        </span>
+                                    </div>
+                                    
+                                    <!-- Animated Cursor -->
+                                    <div class="absolute top-1/2 left-1/2 ml-10 z-20 anim-finger pointer-events-none drop-shadow-2xl text-brand-primary">
+                                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.64,21.97C13.14,22.21 12.54,22.08 12.18,21.65L8.56,17.3L5.16,19.34C4.65,19.64 4,19.56 3.59,19.14C3.18,18.73 3.09,18.09 3.39,17.58L10.95,3.95C11.27,3.38 11.96,3.13 12.57,3.36C13.19,3.59 13.56,4.19 13.5,4.84L12.54,12.78L16.27,11.27C16.82,11.05 17.45,11.24 17.82,11.75C18.19,12.25 18.16,12.92 17.75,13.39L13.64,21.97Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="py-12 bg-white border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-light text-brand-primary leading-tight tracking-tight">+500</div>
+                        <div class="text-[13px] text-brand-muted mt-2 font-medium tracking-wide uppercase">Empresas activas</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-light text-brand-primary leading-tight tracking-tight">99.9%</div>
+                        <div class="text-[13px] text-brand-muted mt-2 font-medium tracking-wide uppercase">Uptime garantizado</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-light text-brand-primary leading-tight tracking-tight">0€</div>
+                        <div class="text-[13px] text-brand-muted mt-2 font-medium tracking-wide uppercase">Sanciones</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-light text-brand-primary leading-tight tracking-tight">&lt;1s</div>
+                        <div class="text-[13px] text-brand-muted mt-2 font-medium tracking-wide uppercase">Tiempo de fichaje</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-20 md:py-24 bg-white border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <p class="text-brand-gold text-sm font-bold uppercase tracking-widest mb-3">Casos de Éxito</p>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tighter leading-tight text-brand-primary">Equipos de RRHH que ya duermen tranquilos.</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-[24px] border border-brand-border/50 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="text-brand-gold mb-5 flex gap-1">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-brand-muted mb-6 leading-relaxed font-light">"Probamos otras dos herramientas antes, pero el equipo de fábrica siempre olvidaba fichar. Desde que pasamos a Evolve, hacerlo desde el móvil sin instalar nada ha sido un antes y un después. Inspección superada sin problemas."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 border border-brand-border flex items-center justify-center text-brand-primary font-bold text-sm">MC</div>
+                            <div>
+                                <p class="font-bold text-brand-primary text-sm">María Castellanos</p>
+                                <p class="text-xs text-brand-muted">Directora de RRHH, Grupo Alvic</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-[24px] border border-brand-border/50 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="text-brand-gold mb-5 flex gap-1">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-brand-muted mb-6 leading-relaxed font-light">"Lo que más me gusta es la integración para fichar por WhatsApp. Nuestros comerciales están todo el día en ruta y antes era imposible llevar el control. Ahora envían un mensaje y listo. El panel de admin es muy intuitivo."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 border border-brand-border flex items-center justify-center text-brand-primary font-bold text-sm">JV</div>
+                            <div>
+                                <p class="font-bold text-brand-primary text-sm">Javier Valero</p>
+                                <p class="text-xs text-brand-muted">CEO, Logística Norte</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-[24px] border border-brand-border/50 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="text-brand-gold mb-5 flex gap-1">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-brand-muted mb-6 leading-relaxed font-light">"Me daba terror el tema de las firmas criptográficas porque pensaba que sería complejo, pero Evolve lo hace todo por detrás. Nosotros solo sacamos el PDF a final de mes y listos. El soporte de su equipo es de 10."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 border border-brand-border flex items-center justify-center text-brand-primary font-bold text-sm">EP</div>
+                            <div>
+                                <p class="font-bold text-brand-primary text-sm">Elena Pardo</p>
+                                <p class="text-xs text-brand-muted">Socia Fundadora, Agencia Crea</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Props Section -->
+        <section id="value-props" class="py-20 md:py-28 bg-[#fafafa] border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <p class="text-brand-gold text-sm font-bold uppercase tracking-widest mb-3">Por qué Evolve Fichaje</p>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tighter leading-tight mb-4 text-brand-primary">Simplicidad en cada registro.<br class="hidden md:block"/>Seguridad en cada dato.</h2>
+                    <p class="text-brand-muted text-lg font-light">La herramienta que Recursos Humanos necesita y que tus empleados amarán usar cada día.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="mb-8">
+                            <svg class="w-8 h-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary mb-3">Evita Sanciones al Instante</h3>
+                        <p class="text-brand-muted leading-relaxed font-light">Supera cualquier inspección laboral en un clic. Genera los informes oficiales (ITSS) de manera automática y asegura el cumplimiento del Art. 34.9.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="mb-8">
+                            <svg class="w-8 h-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary mb-3">Tranquilidad Legal Total</h3>
+                        <p class="text-brand-muted leading-relaxed font-light">Demuestra la veracidad de tus datos sin esfuerzo. Los fichajes se sellan de forma segura para garantizar que nadie los ha manipulado, blindando a tu empresa.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div class="mb-8">
+                            <svg class="w-8 h-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8.5C9.5 7.5 11 7 12 7s2.5.5 3.5 1.5m-5.5 3c.5-.5 1.5-1 2-1s1.5.5 2 1" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary mb-3">Fácil para tus Empleados</h3>
+                        <p class="text-brand-muted leading-relaxed font-light">Cero fricción tecnológica. Tu equipo ficha en segundos desde su móvil sin instalar nada, evitando las excusas y el rechazo al cambio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 md:py-28 bg-white border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <p class="text-brand-gold text-sm font-bold uppercase tracking-widest mb-3">Características</p>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tighter leading-tight mb-4 text-brand-primary">Todo lo que necesitas.<br class="hidden md:block"/> Nada de lo que no.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex gap-6 items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-primary mb-2">Fichaje sin barreras (Online y Offline)</h3>
+                            <p class="text-brand-muted leading-relaxed font-light text-sm sm:text-base">Tus empleados podrán registrar su jornada desde cualquier lugar, incluso si pierden la cobertura. Se acabaron los registros en papel o los olvidos por mala conexión.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex gap-6 items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-primary mb-2">Ahorra horas de gestión administrativa</h3>
+                            <p class="text-brand-muted leading-relaxed font-light text-sm sm:text-base">Centraliza vacaciones, bajas y documentos en un solo lugar. Libera a tu departamento de RRHH de tareas repetitivas y da autonomía a tus trabajadores.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex gap-6 items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-primary mb-2">Tan fácil como enviar un WhatsApp</h3>
+                            <p class="text-brand-muted leading-relaxed font-light text-sm sm:text-base">Ideal para equipos en ruta o comerciales. Sin enseñar a usar nuevas apps: envían un mensaje por WhatsApp y su jornada queda registrada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex gap-6 items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-primary mb-2">Control total sin microgestión</h3>
+                            <p class="text-brand-muted leading-relaxed font-light text-sm sm:text-base">Recibe alertas automáticas sobre excesos de horas o jornadas incompletas. Mantén el control de lo que ocurre en tu empresa sin tener que perseguir a nadie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Compliance Section -->
+        <section id="cumplimiento" class="py-20 md:py-28 bg-black text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-block border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-8 text-[#faf8cc] tracking-wide">
+                        ✦ Garantía Evolve
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-8 text-white">
+                        Cumplimiento absoluto.<br/>Sin margen de error.
+                    </h2>
+                    
+                    <p class="text-white/70 text-xl md:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto font-light">
+                        Nuestros sistemas se actualizan con cada nueva sentencia de la Audiencia Nacional. Cumplir el Art. 34.9 nunca fue tan seguro.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 mb-10">
+                        <div class="bg-[#1a1a1a] border border-[#333] rounded-full px-6 py-3 text-sm font-medium text-white/90">Art. 34.9 ET</div>
+                        <div class="bg-[#1a1a1a] border border-[#333] rounded-full px-6 py-3 text-sm font-medium text-white/90">RGPD & LOPDGDD</div>
+                        <div class="bg-[#1a1a1a] border border-[#333] rounded-full px-6 py-3 text-sm font-medium text-white/90">Normativa ITSS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="precios" class="py-20 md:py-28 bg-[#fafafa]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <p class="text-brand-gold text-sm font-bold uppercase tracking-widest mb-3">Planes y Precios</p>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tighter leading-tight mb-4 text-brand-primary">Elige el plan que mejor se adapta a tu empresa.</h2>
+                    <p class="text-brand-muted text-lg font-light">14 días de prueba gratis en todos los planes. Sin tarjeta de crédito.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+                    
+                    <!-- Card 1: Essential -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50">
+                        <div class="text-[12px] font-bold text-brand-muted uppercase tracking-wider mb-2">Essential</div>
+                        <div class="text-[2.2rem] font-bold text-brand-primary leading-none mb-4">Consultar</div>
+                        <p class="text-brand-muted mb-8 text-sm h-10 font-light">Para equipos que solo necesitan cumplir la ley.</p>
+                        
+                        <a href="https://app.evolvefichaje.com" class="block w-full text-center bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-6 py-3 transition-all duration-300 mb-8">Empezar gratis</a>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">Fichaje PWA (online & offline)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">Informes legales ITSS</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">Firmas criptográficas</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">Soporte por email</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Professional -->
+                    <div class="relative">
+                        <div class="absolute -top-4 inset-x-0 flex justify-center z-10">
+                            <span class="bg-[#faf8cc] text-brand-primary text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide border border-[#e8e6b3]">Más popular</span>
+                        </div>
+                        <div class="bg-white rounded-[24px] p-10 border-2 border-[#e8e6b3] shadow-[0_20px_40px_rgb(0,0,0,0.06)] relative z-0">
+                            <div class="text-[12px] font-bold text-brand-primary uppercase tracking-wider mb-2">Professional</div>
+                            <div class="text-[2.2rem] font-bold text-brand-primary leading-none mb-4">Consultar</div>
+                            <p class="text-brand-muted mb-8 text-sm h-10 font-light">Para empresas que buscan digitalizar su RRHH.</p>
+                            
+                            <a href="https://app.evolvefichaje.com" class="block w-full text-center bg-brand-primary text-white hover:bg-black font-semibold rounded-full px-6 py-3 transition-all duration-300 mb-8">Empezar gratis</a>
+                            
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-brand-primary font-medium text-sm">Todo lo de Essential</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-brand-muted text-sm font-light">Gestión de ausencias</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-brand-muted text-sm font-light">Calendarios y vacaciones</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-brand-muted text-sm font-light">WhatsApp Business</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-brand-muted text-sm font-light">Soporte prioritario</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Enterprise -->
+                    <div class="bg-white p-10 rounded-[24px] border border-brand-border/50">
+                        <div class="text-[12px] font-bold text-brand-muted uppercase tracking-wider mb-2">Enterprise</div>
+                        <div class="text-[2.2rem] font-bold text-brand-primary leading-none mb-4">A medida</div>
+                        <p class="text-brand-muted mb-8 text-sm h-10 font-light">Soluciones personalizadas para grandes empresas.</p>
+                        
+                        <a href="mailto:demo@evolvefichaje.com" class="block w-full text-center bg-white text-brand-primary border border-brand-border hover:border-brand-primary font-semibold rounded-full px-6 py-3 transition-all duration-300 mb-8">Contactar ventas</a>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-primary font-medium text-sm">Todo lo de Professional</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">API de integración</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">SSO & SAML</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-brand-muted text-sm font-light">Soporte dedicado 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 md:py-28 bg-white border-b border-brand-border">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <p class="text-brand-gold text-sm font-bold uppercase tracking-widest mb-3">Dudas Resueltas</p>
+                    <h2 class="text-3xl md:text-4xl font-display leading-tight mb-4 text-brand-primary">Preguntas Frecuentes</h2>
+                    <p class="text-brand-muted text-lg">Todo lo que necesitas saber sobre Evolve Fichaje y el cumplimiento legal.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-semibold text-brand-primary text-lg">¿Qué pasa si un empleado olvida fichar?</span>
+                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-brand-muted leading-relaxed">
+                            El administrador o responsable de RRHH puede añadir o modificar un registro manualmente desde el panel de control. El sistema guardará un historial de esta modificación para mantener la transparencia y cumplir con la normativa ante posibles inspecciones.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-semibold text-brand-primary text-lg">¿Es válido el fichaje desde el móvil para una inspección?</span>
+                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-brand-muted leading-relaxed">
+                            Sí, absolutamente. Evolve Fichaje cumple con todos los requisitos del Art. 34.9 del Estatuto de los Trabajadores. Puedes exportar los informes oficiales en un clic con toda la información requerida por la Inspección de Trabajo (ITSS).
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-semibold text-brand-primary text-lg">¿Controlan la ubicación de los empleados todo el tiempo?</span>
+                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-brand-muted leading-relaxed">
+                            No. Solo registramos la ubicación (si la empresa lo requiere) en el momento exacto en el que el empleado pulsa el botón de "Entrada" o "Salida". Somos 100% respetuosos con la privacidad y cumplimos estrictamente con el RGPD y la LOPDGDD.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-semibold text-brand-primary text-lg">¿Necesito instalar alguna aplicación?</span>
+                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-brand-muted leading-relaxed">
+                            No es necesario. Evolve Fichaje es una Progressive Web App (PWA). Tus empleados solo tienen que acceder a un enlace desde el navegador de su móvil u ordenador, y podrán añadir un acceso directo a su pantalla de inicio como si fuera una app nativa, pero sin consumir espacio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="ayuda" class="py-20 md:py-28 bg-[#3a3a3a] text-white">
+            <div class="max-w-[700px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-display leading-tight mb-4 text-white">Empieza hoy. Sin riesgos, sin compromisos.</h2>
+                <p class="text-white/70 text-lg mb-10">14 días de prueba gratuita con acceso completo. Sin tarjeta de crédito. Sin permanencia.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://app.evolvefichaje.com" class="inline-flex justify-center items-center bg-[#c7a76c] hover:bg-[#b99863] text-[#3a3a3a] font-semibold rounded-[8px] px-8 py-[15px] text-[16px] transition-all duration-300 w-full sm:w-auto">Prueba 14 días gratis</a>
+                    <a href="mailto:demo@evolvefichaje.com" class="inline-flex justify-center items-center border border-white/35 text-white hover:bg-white/10 font-semibold rounded-[8px] px-8 py-[15px] text-[16px] transition-all duration-300 w-full sm:w-auto">Solicitar Demo Personalizada</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-[#2a2a2a] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Columna 1: Brand (ocupa 2 cols en lg) -->
+                <div class="lg:col-span-2">
+                    <div class="mb-4 flex items-center">
+                        <img src="./assets/logo-fichaje.svg" alt="Evolve Fichaje Logo" class="h-10 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-white/45 text-[14px] max-w-[260px] leading-relaxed mb-6">
+                        SaaS de registro de jornada laboral para el mercado español. Cumple con el Real Decreto, RGPD y normativa ITSS.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="./assets/logo-evolve.svg" alt="Evolve Partners Group" class="h-5 w-auto opacity-35 brightness-0 invert">
+                        <span class="text-white/30 text-[12px]">Un producto de Evolve Partners Group</span>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Compañía -->
+                <div>
+                    <h4 class="text-white font-semibold text-[14px] mb-4">Compañía</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Sobre Evolve</a></li>
+                        <li><a href="mailto:hola@evolvefichaje.com" class="text-white/50 text-[14px] hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#ayuda" class="text-white/50 text-[14px] hover:text-white transition-colors">Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal -->
+                <div>
+                    <h4 class="text-white font-semibold text-[14px] mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Aviso Legal</a></li>
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Cookies</a></li>
+                        <li><a href="#" class="text-white/50 text-[14px] hover:text-white transition-colors">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/30 text-[13px] text-center md:text-left">
+                    &copy; 2026 Evolve Partners Group. Todos los derechos reservados.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                    </span>
+                    <span class="text-white/30 text-[13px]">Todos los sistemas operativos</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const iconPath = document.getElementById('menu-icon-path');
+            const mobileLinks = menu.querySelectorAll('a');
+
+            const toggleMenu = () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                } else {
+                    iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                }
+            };
+
+            btn.addEventListener('click', toggleMenu);
+
+            // Close menu on link click
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!menu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // FAQ Accordion Logic
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('.faq-icon');
+                    
+                    // Close all others
+                    faqBtns.forEach(otherBtn => {
+                        if (otherBtn !== btn) {
+                            otherBtn.nextElementSibling.classList.add('hidden');
+                            otherBtn.querySelector('.faq-icon').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle current
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

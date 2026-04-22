@@ -1,0 +1,63 @@
+/* Nav */
+
+/* Hero */
+.hero-bg {
+    background:
+        radial-gradient(circle at 12% 16%, rgba(199,167,198,0.12), transparent 28%),
+        radial-gradient(circle at 86% 85%, rgba(58,58,58,0.05), transparent 30%),
+        #f9f8f8;
+}
+
+/* Stats */
+
+/* Value Props */
+
+/* Features */
+
+/* Legal */
+
+/* Pricing */
+
+/* CTA Final */
+
+/* Footer */
+
+/* Animaciones y transiciones propias de la landing */
+@keyframes finger-tap {
+  0% { transform: translate(40px, 40px); opacity: 0; }
+  15% { transform: translate(0, 0); opacity: 1; }
+  20% { transform: translate(0, 0) scale(0.9); }
+  25% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(20px, 50px); opacity: 0; }
+  100% { transform: translate(20px, 50px); opacity: 0; }
+}
+
+@keyframes button-press {
+  0%, 17% { transform: scale(1); }
+  20% { transform: scale(0.96); box-shadow: inset 0 4px 6px rgba(0,0,0,0.2); }
+  23%, 100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+}
+
+@keyframes bg-color-change {
+  0%, 20% { background-color: #10b981; } /* emerald-500 */
+  21%, 85% { background-color: #ef4444; } /* red-500 */
+  86%, 100% { background-color: #10b981; }
+}
+
+@keyframes text-in {
+  0%, 20% { opacity: 1; }
+  21%, 100% { opacity: 0; }
+}
+
+@keyframes text-out {
+  0%, 20% { opacity: 0; }
+  21%, 85% { opacity: 1; }
+  86%, 100% { opacity: 0; }
+}
+
+.anim-finger { animation: finger-tap 4s infinite ease-out; }
+.anim-button { animation: button-press 4s infinite ease-out, bg-color-change 4s infinite ease-out; }
+.anim-text-in { animation: text-in 4s infinite; }
+.anim-text-out { animation: text-out 4s infinite; }
+
+/* Media queries */
