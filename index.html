@@ -57,6 +57,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/shared.css">
     <link rel="stylesheet" href="./css/landing.css">
+    <style>
+        .faq-item { border: 1px solid #ece8e9; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: white; border: none; cursor: pointer; font-size: 15px; font-weight: 600; color: #1a1a1a; text-align: left; }
+        .faq-question:hover { background: #fafaf8; }
+        .faq-icon { transition: transform 0.3s ease; flex-shrink: 0; color: #c7a76c; }
+        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer p { padding: 0 24px 20px; color: #6b6b6b; font-size: 14px; line-height: 1.7; margin: 0; }
+    </style>
 </head>
 <body class="bg-brand-bg relative">
 
@@ -525,67 +534,67 @@
 
                 <div class="space-y-4">
                     <!-- FAQ 1 -->
-                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-semibold text-brand-primary text-lg">¿Qué pasa si me hace una inspección la ITSS mañana?</span>
-                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Qué pasa si me hace una inspección la ITSS mañana?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </button>
-                        <div class="faq-content px-6 pb-5 text-brand-muted leading-relaxed" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                            En menos de 30 segundos generas el informe oficial con todos los registros firmados criptográficamente. Es el documento exacto que pide la Inspección de Trabajo. Ningún cliente de Evolve ha recibido una sanción por registro de jornada.
+                        <div class="faq-answer">
+                            <p>En menos de 30 segundos generas el informe oficial con todos los registros firmados criptográficamente. Es el documento exacto que pide la Inspección de Trabajo. Ningún cliente de Evolve ha recibido una sanción por registro de jornada.</p>
                         </div>
                     </div>
 
                     <!-- FAQ 2 -->
-                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-semibold text-brand-primary text-lg">¿Cuánto cuesta realmente? ¿Hay letra pequeña?</span>
-                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cuánto cuesta realmente? ¿Hay letra pequeña?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </button>
-                        <div class="faq-content px-6 pb-5 text-brand-muted leading-relaxed" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                            Los precios son por empresa, no por empleado. Sin permanencia, sin costes de setup, sin sorpresas en la factura. Cancelas cuando quieras desde el panel. Escríbenos y te damos precio exacto para tu tamaño de equipo.
+                        <div class="faq-answer">
+                            <p>Los precios son por empresa, no por empleado. Sin permanencia, sin costes de setup, sin sorpresas en la factura. Cancelas cuando quieras desde el panel. Escríbenos y te damos precio exacto para tu tamaño de equipo.</p>
                         </div>
                     </div>
 
                     <!-- FAQ 3 -->
-                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-semibold text-brand-primary text-lg">¿Mis empleados van a usarlo o van a buscar excusas?</span>
-                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Mis empleados van a usarlo o van a buscar excusas?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </button>
-                        <div class="faq-content px-6 pb-5 text-brand-muted leading-relaxed" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                            El fichaje se hace en menos de 1 segundo desde el móvil, sin instalar nada. También pueden fichar por WhatsApp. En empresas con empleados poco tecnológicos es donde más éxito tenemos.
+                        <div class="faq-answer">
+                            <p>El fichaje se hace en menos de 1 segundo desde el móvil, sin instalar nada. También pueden fichar por WhatsApp. En empresas con empleados poco tecnológicos es donde más éxito tenemos.</p>
                         </div>
                     </div>
 
                     <!-- FAQ 4 -->
-                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-semibold text-brand-primary text-lg">¿Es legal fichar desde el móvil sin firma física?</span>
-                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Es legal fichar desde el móvil sin firma física?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </button>
-                        <div class="faq-content px-6 pb-5 text-brand-muted leading-relaxed" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                            Sí, completamente legal. El Tribunal Supremo y la Audiencia Nacional han validado el registro digital con garantías de integridad. Nuestras firmas criptográficas cumplen exactamente con esos requisitos.
+                        <div class="faq-answer">
+                            <p>Sí, completamente legal. El Tribunal Supremo y la Audiencia Nacional han validado el registro digital con garantías de integridad. Nuestras firmas criptográficas cumplen exactamente con esos requisitos.</p>
                         </div>
                     </div>
 
                     <!-- FAQ 5 -->
-                    <div class="border border-brand-border rounded-lg bg-white overflow-hidden transition-all duration-200 hover:border-brand-gold">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-semibold text-brand-primary text-lg">¿Qué pasa con mis datos si cancelo?</span>
-                            <svg class="w-5 h-5 text-brand-gold transform transition-transform duration-200 faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Qué pasa con mis datos si cancelo?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </button>
-                        <div class="faq-content px-6 pb-5 text-brand-muted leading-relaxed" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                            Tus datos son tuyos. Al cancelar puedes exportar todo el histórico en formato CSV y PDF. Cumplimos con el RGPD y la LOPDGDD. No vendemos datos ni los usamos para nada ajeno al servicio.
+                        <div class="faq-answer">
+                            <p>Tus datos son tuyos. Al cancelar puedes exportar todo el histórico en formato CSV y PDF. Cumplimos con el RGPD y la LOPDGDD. No vendemos datos ni los usamos para nada ajeno al servicio.</p>
                         </div>
                     </div>
                 </div>
@@ -763,24 +772,20 @@
             });
 
             // FAQ Accordion Logic
-            const faqBtns = document.querySelectorAll('.faq-btn');
-            faqBtns.forEach(btn => {
+            document.querySelectorAll('.faq-question').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const content = btn.nextElementSibling;
-                    const icon = btn.querySelector('.faq-icon');
-                    
-                    // Close all others
-                    faqBtns.forEach(otherBtn => {
-                        if (otherBtn !== btn) {
-                            otherBtn.nextElementSibling.classList.add('hidden');
-                            otherBtn.querySelector('.faq-icon').classList.remove('rotate-180');
-                        }
+                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                    document.querySelectorAll('.faq-question').forEach(b => {
+                        b.setAttribute('aria-expanded', 'false');
+                        b.nextElementSibling.style.maxHeight = null;
                     });
-
-                    // Toggle current
-                    content.classList.toggle('hidden');
-                    icon.classList.toggle('rotate-180');
+                    if (!isOpen) {
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.nextElementSibling.style.maxHeight = btn.nextElementSibling.scrollHeight + 'px';
+                    }
                 });
+            });
+
             // Email Obfuscation Logic
             document.querySelectorAll('[data-email]').forEach(el => {
                 el.addEventListener('click', (e) => {
