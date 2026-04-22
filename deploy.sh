@@ -13,8 +13,6 @@ echo "🚀 Desplegando Evolve Landing..."
 
 rsync -avz --delete \
   --exclude='.git' \
-  --exclude='README.md' \
-  --exclude='deploy.sh' \
   --exclude='.DS_Store' \
   "$PROJECT_DIR/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
 
